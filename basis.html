@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hashi.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hashi.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hashi.png">
+  <link rel="mask-icon" href="/images/hashi.png" color="#222">
   <meta name="baidu-site-verification" content="code-9owF52r7EE">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -30,14 +30,14 @@
 <meta property="og:site_name" content="Somebody&#39;s Notes">
 <meta property="og:description" content="记录 git 的基础知识">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://blog.yjg.ink/blog/images/Git/gitfile.png">
-<meta property="og:image" content="http://blog.yjg.ink/blog/images/Git/rebase.png">
+<meta property="og:image" content="http://blog.yjg.ink/images/Git/gitfile.png">
+<meta property="og:image" content="http://blog.yjg.ink/images/Git/rebase.png">
 <meta property="article:published_time" content="2020-01-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-11-13T06:19:47.390Z">
+<meta property="article:modified_time" content="2020-11-13T09:13:03.358Z">
 <meta property="article:author" content="Yang Jagon">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://blog.yjg.ink/blog/images/Git/gitfile.png">
+<meta name="twitter:image" content="http://blog.yjg.ink/images/Git/gitfile.png">
 
 <link rel="canonical" href="http://blog.yjg.ink/basis.html">
 
@@ -143,7 +143,7 @@
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fab fa-odnoklassniki fa-fw"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -249,7 +249,7 @@
 
       
         <h1 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h1><p>Git 有三种状态，已提交（committed）、已修改（modified）和已暂存（staged）。<br>Git 项目的三个工作区域的概念：Git 仓库、工作目录和暂存区域。</p>
-<h2 id="git文件生命周期图"><a href="#git文件生命周期图" class="headerlink" title="git文件生命周期图"></a>git文件生命周期图</h2><p><img src="/blog/images/Git/gitfile.png" alt="gitfile"></p>
+<h2 id="git文件生命周期图"><a href="#git文件生命周期图" class="headerlink" title="git文件生命周期图"></a>git文件生命周期图</h2><p><img src="/images/Git/gitfile.png" alt="gitfile"></p>
 <h2 id="git-初始设置以及查看和帮助命令"><a href="#git-初始设置以及查看和帮助命令" class="headerlink" title="git 初始设置以及查看和帮助命令"></a>git 初始设置以及查看和帮助命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装完git后首先需要设置用户名和邮箱</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name <span class="string">&quot;John Doe&quot;</span> </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.email johndoe@example.com</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有 Git 当时能找到的配置</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --list	</span></span><br><span class="line">user.name=John Doe </span><br><span class="line">user.email=johndoe@example.com </span><br><span class="line">color.status=auto </span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看某一项的设置</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config user.name	</span></span><br><span class="line">John Doe</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 获取帮助，如 git <span class="built_in">help</span> config</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">help</span> &lt;verb&gt; </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git &lt;verb&gt; --<span class="built_in">help</span> </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> man git-&lt;verb&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="初始git仓库命令"><a href="#初始git仓库命令" class="headerlink" title="初始git仓库命令"></a>初始git仓库命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 该命令将创建一个名为.git的子目录，这个子目录含有初始化Git仓库中所有的必须文件</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git init</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 克隆一个仓库到本地</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/libgit2/libgit2</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 与上一命令相同，只不过在本地的仓库名字改为<span class="string">&quot;mylibgit&quot;</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/libgit2/libgit2 mylibgit</span></span><br></pre></td></tr></table></figure>
@@ -324,7 +324,7 @@
 <h2 id="分支变基"><a href="#分支变基" class="headerlink" title="分支变基"></a>分支变基</h2><p>变基的原理是首先找到这两个分支（即当前分支 experiment、变基操作的目标基底分支 master）的最近共同祖 先 C2，然后对比当前分支相对于该祖先的历次提交，提取相应的修改并存为临时文件，然后将当前分支指向目标基底 C3, 最后以此将之前另存为临时文件的修改依序应用。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git checkout experiment</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git rebase master</span></span><br><span class="line">First, rewinding head to replay your work on top of it...</span><br><span class="line">Applying: added staged command</span><br></pre></td></tr></table></figure>
 
-<p><img src="/blog/images/Git/rebase.png" alt="rebase"></p>
+<p><img src="/images/Git/rebase.png" alt="rebase"></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 将server中的修改变基到master上</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git rebase master server</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 取出client分支，找出处于client分支和server分支的共同祖先之后的修改，然后把它们在master分支上重放一遍</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git rebase --onto master server client</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git branch -d testing</span></span><br></pre></td></tr></table></figure>
@@ -498,7 +498,7 @@
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fas fa-basketball-ball"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Yang Jagon</span>
 </div>
