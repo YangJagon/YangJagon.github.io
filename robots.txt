@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /images/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: http://blog.yjg.ink/sitemap.xml
+Sitemap: http://blog.yjg.ink/baidusitemap.xml
