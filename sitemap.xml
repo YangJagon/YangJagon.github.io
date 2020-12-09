@@ -16,70 +16,7 @@
   </url>
   
   <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/sumup.html</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Strategy.html</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Bridge.html</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Builder.html</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Proxy.html</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Template.html</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/ChainOfResponsibility.html</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.yjg.ink/Git%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E5%90%88.html</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Iterator.html</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Basis.html</loc>
     
     <lastmod>2020-11-13</lastmod>
     
@@ -107,119 +44,7 @@
   </url>
   
   <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/AbstractFactory.html</loc>
-    
-    <lastmod>2020-11-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Factory.html</loc>
-    
-    <lastmod>2020-11-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Prototype.html</loc>
-    
-    <lastmod>2020-11-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Singleton.html</loc>
-    
-    <lastmod>2020-11-12</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.yjg.ink/JAVA%20%E6%A1%A5%E6%96%B9%E6%B3%95.html</loc>
-    
-    <lastmod>2020-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Flyweight.html</loc>
-    
-    <lastmod>2020-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Facade.html</loc>
-    
-    <lastmod>2020-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Decorator.html</loc>
-    
-    <lastmod>2020-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Composite.html</loc>
-    
-    <lastmod>2020-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Adapter.html</loc>
-    
-    <lastmod>2020-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Visitor.html</loc>
-    
-    <lastmod>2020-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/State.html</loc>
-    
-    <lastmod>2020-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Observer.html</loc>
-    
-    <lastmod>2020-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Memento.html</loc>
-    
-    <lastmod>2020-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Mediator.html</loc>
-    
-    <lastmod>2020-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Interpreter.html</loc>
-    
-    <lastmod>2020-11-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Design-Patterns/Command.html</loc>
     
     <lastmod>2020-11-11</lastmod>
     
@@ -228,7 +53,7 @@
 
   <url>
     <loc>http://blog.yjg.ink/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-12-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -236,63 +61,49 @@
   
   <url>
     <loc>http://blog.yjg.ink/tags/Java/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-12-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.yjg.ink/tags/%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-12-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.yjg.ink/tags/Git/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/tags/%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-12-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.yjg.ink/tags/terminal/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-12-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.yjg.ink/tags/ssh/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-12-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.yjg.ink/tags/scp/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-12-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.yjg.ink/tags/%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-12-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -301,49 +112,21 @@
   
   <url>
     <loc>http://blog.yjg.ink/categories/Java/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-12-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.yjg.ink/categories/Git/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-12-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.yjg.ink/categories/Terminal/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-12-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

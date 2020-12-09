@@ -32,7 +32,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.yjg.ink/images/ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/Windows%E8%AE%BE%E7%BD%AE%E5%BC%80%E5%90%AFssh.png">
 <meta property="article:published_time" content="2020-11-13T11:51:32.000Z">
-<meta property="article:modified_time" content="2020-11-13T16:07:50.406Z">
+<meta property="article:modified_time" content="2020-11-13T16:24:05.030Z">
 <meta property="article:author" content="Yang Jagon">
 <meta property="article:tag" content="terminal">
 <meta property="article:tag" content="ssh">
@@ -130,17 +130,17 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">29</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -252,10 +252,10 @@
       
         <p>Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，SSH 通过在网络中创建安全隧道来实现 SSH 客户端与服务器之间的安全连接，现实中最常用于远程登录系统。SSH 是一种网络协议，其中最常用的实现是 OpenSSH。</p>
 <h1 id="SSH-服务的安装及开启"><a href="#SSH-服务的安装及开启" class="headerlink" title="SSH 服务的安装及开启"></a>SSH 服务的安装及开启</h1><p>SSH 分为服务端软件和客户端软件，只有在被连接机器使用服务端软件开启 SSH 服务，远程的机器才能使用客户端软件在终端进行连接。若只想在用自己的电脑连接远程服务器，只需下载 SSH 客户端软件即可。</p>
-<p><strong>Windows</strong><br>在 windows 系统中，可以在<strong>设置-&gt;应用-&gt;可选功能-&gt;添加功能</strong>里安装 SSH 的服务端软件和客户端软件：<br><img src="/images/ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/Windows%E8%AE%BE%E7%BD%AE%E5%BC%80%E5%90%AFssh.png" alt="gitfile"><br>安装之后在以管理员身份运行的终端对服务端 SSH 软件进行控制：</p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在 windows 系统中，可以在<strong>设置-&gt;应用-&gt;可选功能-&gt;添加功能</strong>里安装 SSH 的服务端软件和客户端软件：<br><img src="/images/ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/Windows%E8%AE%BE%E7%BD%AE%E5%BC%80%E5%90%AFssh.png" alt="gitfile"><br>安装之后在以管理员身份运行的终端对服务端 SSH 软件进行控制：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net start sshd  #开启ssh服务</span><br><span class="line">net stop sshd   #关闭ssh服务</span><br></pre></td></tr></table></figure>
 
-<p><strong>Linux</strong><br>在 Linux 系统中，可以使用 <strong>dpkg</strong> 命令确认是否已经安装了相应的 SSH 软件，若出现以下两行，则证明已安装好了：</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>在 Linux 系统中，可以使用 <strong>dpkg</strong> 命令确认是否已经安装了相应的 SSH 软件，若出现以下两行，则证明已安装好了：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> dpkg -l | grep ssh</span></span><br><span class="line">ii  openssh-client  1:8.2p1-4   amd64   secure shell (SSH) client, for secure access to remote machines</span><br><span class="line">ii  openssh-server  1:8.2p1-4   amd64   secure shell (SSH) server, for secure access from remote machines</span><br></pre></td></tr></table></figure>
 
 <p>若系统没有默认安装，则可使用 <strong>apt</strong> 命令进行下载安装：</p>
@@ -304,8 +304,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/Design-Patterns/sumup.html" rel="prev" title="设计模式总览">
-      <i class="fa fa-chevron-left"></i> 设计模式总览
+    <a href="/Git%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E5%90%88.html" rel="prev" title="Git 常用命令整合">
+      <i class="fa fa-chevron-left"></i> Git 常用命令整合
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -366,7 +366,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SSH-%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%AE%89%E8%A3%85%E5%8F%8A%E5%BC%80%E5%90%AF"><span class="nav-number">1.</span> <span class="nav-text">SSH 服务的安装及开启</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSH%E7%9A%84%E4%B8%A4%E7%A7%8D%E7%99%BB%E5%BD%95%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">SSH的两种登录方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%A3%E4%BB%A4%E7%99%BB%E5%BD%95"><span class="nav-number">2.1.</span> <span class="nav-text">口令登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E9%92%A5%E7%99%BB%E5%BD%95"><span class="nav-number">2.2.</span> <span class="nav-text">公钥登录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93"><span class="nav-number">3.</span> <span class="nav-text">终端文件传输</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SSH-%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%AE%89%E8%A3%85%E5%8F%8A%E5%BC%80%E5%90%AF"><span class="nav-number">1.</span> <span class="nav-text">SSH 服务的安装及开启</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows"><span class="nav-number">1.1.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-number">1.2.</span> <span class="nav-text">Linux</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSH%E7%9A%84%E4%B8%A4%E7%A7%8D%E7%99%BB%E5%BD%95%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">SSH的两种登录方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%A3%E4%BB%A4%E7%99%BB%E5%BD%95"><span class="nav-number">2.1.</span> <span class="nav-text">口令登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E9%92%A5%E7%99%BB%E5%BD%95"><span class="nav-number">2.2.</span> <span class="nav-text">公钥登录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93"><span class="nav-number">3.</span> <span class="nav-text">终端文件传输</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -382,20 +382,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
