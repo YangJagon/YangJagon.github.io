@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.yjg.ink/Git%20%E5%9F%BA%E7%A1%80%20(%E7%B2%97%E7%95%A5%E7%AC%94%E8%AE%B0).html</loc>
+    
+    <lastmod>2020-12-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.yjg.ink/Git%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E5%90%88.html</loc>
+    
+    <lastmod>2020-12-10</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.yjg.ink/about/index.html</loc>
     
     <lastmod>2020-12-10</lastmod>
@@ -10,20 +24,6 @@
   
   <url>
     <loc>http://blog.yjg.ink/%E7%BB%88%E7%AB%AF%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93.html</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Git%20%E5%9F%BA%E7%A1%80%20(%E7%B2%97%E7%95%A5%E7%AC%94%E8%AE%B0).html</loc>
-    
-    <lastmod>2020-11-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/Git%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E5%90%88.html</loc>
     
     <lastmod>2020-11-13</lastmod>
     
@@ -67,20 +67,6 @@
   </url>
   
   <url>
-    <loc>http://blog.yjg.ink/tags/Java/</loc>
-    <lastmod>2020-12-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.yjg.ink/tags/%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/</loc>
-    <lastmod>2020-12-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.yjg.ink/tags/terminal/</loc>
     <lastmod>2020-12-10</lastmod>
     <changefreq>daily</changefreq>
@@ -108,6 +94,20 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://blog.yjg.ink/tags/Java/</loc>
+    <lastmod>2020-12-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.yjg.ink/tags/%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7/</loc>
+    <lastmod>2020-12-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -118,14 +118,14 @@
   </url>
   
   <url>
-    <loc>http://blog.yjg.ink/categories/Java/</loc>
+    <loc>http://blog.yjg.ink/categories/Terminal/</loc>
     <lastmod>2020-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://blog.yjg.ink/categories/Terminal/</loc>
+    <loc>http://blog.yjg.ink/categories/Java/</loc>
     <lastmod>2020-12-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

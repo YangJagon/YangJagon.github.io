@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://blog.yjg.ink/%E7%BB%88%E7%AB%AF%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93.html</loc>
-    <lastmod>2020-11-13</lastmod>
-  </url>
-  <url>
     <loc>http://blog.yjg.ink/Git%20%E5%9F%BA%E7%A1%80%20(%E7%B2%97%E7%95%A5%E7%AC%94%E8%AE%B0).html</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-12-10</lastmod>
   </url>
   <url>
     <loc>http://blog.yjg.ink/Git%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E5%90%88.html</loc>
+    <lastmod>2020-12-10</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.yjg.ink/%E7%BB%88%E7%AB%AF%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93.html</loc>
     <lastmod>2020-11-13</lastmod>
   </url>
   <url>

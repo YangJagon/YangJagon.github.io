@@ -157,7 +157,7 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('/img/evening.webp') no-repeat center center;
+         style="background: url('/img/snow.webp') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -244,7 +244,7 @@ John Doe</code></pre></div>
 <h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git init</span></code></pre></div>
 
 <h3 id="克隆一个仓库到本地"><a href="#克隆一个仓库到本地" class="headerlink" title="克隆一个仓库到本地"></a>克隆一个仓库到本地</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git <span class="hljs-built_in">clone</span> https://github.com/libgit2/libgit2</span>
-<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">## 与上一命令相同，只不过在本地的仓库名字改为&quot;mylibgit&quot;</span></span>
+<span class="hljs-meta">#</span><span class="bash"> 与上一命令相同，只不过在本地的仓库名字改为<span class="hljs-string">&quot;mylibgit&quot;</span></span>
 <span class="hljs-meta">$</span><span class="bash"> git <span class="hljs-built_in">clone</span> https://github.com/libgit2/libgit2 mylibgit</span></code></pre></div>
 
 <h3 id="查看当前仓库状态"><a href="#查看当前仓库状态" class="headerlink" title="查看当前仓库状态"></a>查看当前仓库状态</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git status</span></code></pre></div>
@@ -258,28 +258,28 @@ John Doe</code></pre></div>
 <h3 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git mv file_from file_to</span></code></pre></div>
 
 <h3 id="查看尚未暂存的文件更新了哪些部分"><a href="#查看尚未暂存的文件更新了哪些部分" class="headerlink" title="查看尚未暂存的文件更新了哪些部分"></a>查看尚未暂存的文件更新了哪些部分</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git diff</span>
-<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">## 查看已暂存的将要添加到下次提交里的内容</span></span>
+<span class="hljs-meta">#</span><span class="bash"> 查看已暂存的将要添加到下次提交里的内容</span>
 <span class="hljs-meta">$</span><span class="bash"> git diff --cached </span></code></pre></div>
 
 <h3 id="提交文件"><a href="#提交文件" class="headerlink" title="提交文件"></a>提交文件</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git commit -m <span class="hljs-string">&quot;Story 182: Fix benchmarks for speed&quot;</span></span></code></pre></div>
 
 <h3 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git <span class="hljs-built_in">log</span></span>
-<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">## 加 -p 显示每次提交的内容差异，加上-2来仅显示最近两次提交</span></span>
+<span class="hljs-meta">#</span><span class="bash"> 加 -p 显示每次提交的内容差异，加上-2来仅显示最近两次提交</span>
 <span class="hljs-meta">$</span><span class="bash"> git <span class="hljs-built_in">log</span> -p -2</span>
-<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">## 加 --stat 显示每次提交的简略的统计信息</span></span>
+<span class="hljs-meta">#</span><span class="bash"> 加 --<span class="hljs-built_in">stat</span> 显示每次提交的简略的统计信息</span>
 <span class="hljs-meta">$</span><span class="bash"> git <span class="hljs-built_in">log</span> --<span class="hljs-built_in">stat</span></span></code></pre></div>
 
 <h3 id="重新提交"><a href="#重新提交" class="headerlink" title="重新提交"></a>重新提交</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git commit --amend</span></code></pre></div>
 
 <h3 id="取消暂存文件"><a href="#取消暂存文件" class="headerlink" title="取消暂存文件"></a>取消暂存文件</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git reset HEAD CONTRIBUTING.md</span></code></pre></div>
 
-<h3 id="撤销更改"><a href="#撤销更改" class="headerlink" title="撤销更改"></a>撤销更改</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git checkout -<span class="hljs-comment">### CONTRIBUTING.md</span></span></code></pre></div>
+<h3 id="撤销更改"><a href="#撤销更改" class="headerlink" title="撤销更改"></a>撤销更改</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git checkout -<span class="hljs-comment"># CONTRIBUTING.md</span></span></code></pre></div>
 
 <h3 id="查看远程仓库信息"><a href="#查看远程仓库信息" class="headerlink" title="查看远程仓库信息"></a>查看远程仓库信息</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git remote</span>
 origin
-<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">## -v会显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL</span></span>
+<span class="hljs-meta">#</span><span class="bash"> -v会显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL</span>
 <span class="hljs-meta">$</span><span class="bash"> git remote -v </span>
-<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">## 要查看某一个远程仓库的更多信息，可以使用 git remote show [remote-name] 命令。</span></span>
+<span class="hljs-meta">#</span><span class="bash"> 要查看某一个远程仓库的更多信息，可以使用 git remote show [remote-name] 命令。</span>
 <span class="hljs-meta">$</span><span class="bash"> git remote show origin</span></code></pre></div>
 
 <h3 id="添加一个新的远程-Git-仓库"><a href="#添加一个新的远程-Git-仓库" class="headerlink" title="添加一个新的远程 Git 仓库"></a>添加一个新的远程 Git 仓库</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git remote add pb https://github.com/paulboone/ticgit</span>
@@ -315,7 +315,7 @@ v1.8.5-rc0</code></pre></div>
 <h3 id="后期添加标签"><a href="#后期添加标签" class="headerlink" title="后期添加标签"></a>后期添加标签</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git <span class="hljs-built_in">log</span> --pretty=oneline</span>
 9fceb02d0ae598e95dc970b74767f19372d61af8 updated rakefile
 8a5cbc430f1a9c3d00faaeffd07798508422908a updated readme
-<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment">## 在命令的末尾指定提交的校验和（或部分校验和）:</span></span>
+<span class="hljs-meta">#</span><span class="bash"> 在命令的末尾指定提交的校验和（或部分校验和）:</span>
 <span class="hljs-meta">$</span><span class="bash"> git tag -a v1.2 9fceb02</span></code></pre></div>
 
 <h3 id="推送标签到origin服务器上"><a href="#推送标签到origin服务器上" class="headerlink" title="推送标签到origin服务器上"></a>推送标签到origin服务器上</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git push origin v1.5</span></code></pre></div>
@@ -331,7 +331,7 @@ Switched to a new branch &#x27;version2&#x27;</code></pre></div>
 * c2b9e (HEAD, master) made other changes
 | * 87ab2 (testing) made a change
 |/
-* f30ab add feature #32 ### ability to add new formats to the</code></pre></div>
+* f30ab add feature #32 # ability to add new formats to the</code></pre></div>
 
 <h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git branch testing </span></code></pre></div>
 
@@ -390,7 +390,7 @@ Branch serverfix set up to track remote branch serverfix from origin.</code></pr
 
 <h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> git push origin --delete serverfix</span>
 To https://github.com/schacon/simplegit
-<span class="hljs-meta"> #</span><span class="bash"><span class="hljs-comment">## [deleted] serverfix</span></span></code></pre></div>
+<span class="hljs-meta"> #</span><span class="bash"> [deleted] serverfix</span></code></pre></div>
             </div>
             <hr>
             <div>
