@@ -17,7 +17,7 @@
   <meta name="description" content="A Code Farmer">
   <meta name="author" content="Yang Jagon">
   <meta name="keywords" content="博客, 信息技术, 笔记">
-  <title>终端实现远程连接与文件传输 - Somebody&#39;s Notes</title>
+  <title>终端设置代理 - Somebody&#39;s Notes</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.3/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.2)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="终端实现远程连接与文件传输">
+            <span class="h2" id="subtitle" title="终端设置代理">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-11-13 19:51" pubdate>
-        2020年11月13日 晚上
+      <time datetime="2020-12-13 22:28" pubdate>
+        2020年12月13日 晚上
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      871 字
+      524 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10
+      7
        分钟
     </span>
   
@@ -225,56 +225,65 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">终端实现远程连接与文件传输</h1>
+            <h1 style="display: none">终端设置代理</h1>
             
             <div class="markdown-body">
-              <p>Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，SSH 通过在网络中创建安全隧道来实现 SSH 客户端与服务器之间的安全连接，现实中最常用于远程登录系统。SSH 是一种网络协议，其中最常用的实现是 OpenSSH。</p>
-<h1 id="SSH-服务的安装及开启"><a href="#SSH-服务的安装及开启" class="headerlink" title="SSH 服务的安装及开启"></a>SSH 服务的安装及开启</h1><p>SSH 分为服务端软件和客户端软件，只有在被连接机器使用服务端软件开启 SSH 服务，远程的机器才能使用客户端软件在终端进行连接。若只想在用自己的电脑连接远程服务器，只需下载 SSH 客户端软件即可。</p>
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在 windows 系统中，可以在<strong>设置-&gt;应用-&gt;可选功能-&gt;添加功能</strong>里安装 SSH 的服务端软件和客户端软件：<br><img src="/images/ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/Windows%E8%AE%BE%E7%BD%AE%E5%BC%80%E5%90%AFssh.png" srcset="/img/loading.gif" alt="gitfile"><br>安装之后在以管理员身份运行的终端对服务端 SSH 软件进行控制：</p>
-<div class="hljs"><pre><code class="hljs shell">net start sshd  #开启ssh服务
-net stop sshd   #关闭ssh服务</code></pre></div>
+              <h1 id="终端设置代理"><a href="#终端设置代理" class="headerlink" title="终端设置代理"></a>终端设置代理</h1><p>当我们通过境内网络在终端使用“<strong>git</strong>”或“<strong>pip</strong>”等软件时，由于他们的服务器都在国外，访问、下载速度非常慢。因此搜索学习了在终端设置代理，加快访问速度，并记录一下。</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>首先需要准备一个设置好代理服务器的代理软件，并在软件中查看对应的通信方式及端口。如我使用的是v2ray，从下图中可以看到该客户端包含的两种通信方式及其对应的两个端口分别是：</p>
+<div class="hljs"><pre><code class="hljs bash">socks5://127.0.0.1:10808
+http://127.0.0.1:10809</code></pre></div>
 
-<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>在 Linux 系统中，可以使用 <strong>dpkg</strong> 命令确认是否已经安装了相应的 SSH 软件，若出现以下两行，则证明已安装好了：</p>
-<div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dpkg -l | grep ssh</span>
-ii  openssh-client  1:8.2p1-4   amd64   secure shell (SSH) client, for secure access to remote machines
-ii  openssh-server  1:8.2p1-4   amd64   secure shell (SSH) server, for secure access from remote machines</code></pre></div>
+<p><img src="/images/%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/v2ray.png" srcset="/img/loading.gif" alt="v2ray"></p>
+<h2 id="设置命令"><a href="#设置命令" class="headerlink" title="设置命令"></a>设置命令</h2><p>在不同的终端里，代理设置的命令不尽相同。</p>
+<h3 id="Cmd"><a href="#Cmd" class="headerlink" title="Cmd"></a>Cmd</h3><p>在Windows使用的cmd里，设置命令如下：</p>
+<div class="hljs"><pre><code class="hljs bash"><span class="hljs-comment"># 设置全部代理</span>
+<span class="hljs-built_in">set</span> all_proxy=socks5://127.0.0.1:10808
+<span class="hljs-built_in">set</span> all_proxy=http://127.0.0.1:10809
 
-<p>若系统没有默认安装，则可使用 <strong>apt</strong> 命令进行下载安装：</p>
-<div class="hljs"><pre><code class="hljs shell">sudo apt-get install openssh-client #安装客户端ssh
-sudo apt-get install openssh-server #安装服务端ssh</code></pre></div>
+<span class="hljs-comment"># 设置http和https的代理</span>
+<span class="hljs-built_in">set</span> http_proxy=socks5://127.0.0.1:10808
+<span class="hljs-built_in">set</span> https_proxy=socks5://127.0.0.1:10808
+<span class="hljs-built_in">set</span> http_proxy=http://127.0.0.1:10809
+<span class="hljs-built_in">set</span> https_proxy=http://127.0.0.1:10809
 
-<p>安装之后同样在终端进行 SSH 服务的控制：</p>
-<div class="hljs"><pre><code class="hljs shell">sudo service ssh start  #开启ssh服务
-sudo service ssh stop   #关闭ssh服务
-sudo service ssh status #查看ssh服务状态</code></pre></div>
+<span class="hljs-comment"># 设置http和https代理的用户名和密码（通常不用）</span>
+<span class="hljs-built_in">set</span> http_proxy_user=user
+<span class="hljs-built_in">set</span> http_proxy_pass=pass
+<span class="hljs-built_in">set</span> https_proxy_user=user
+<span class="hljs-built_in">set</span> https_proxy_pass=pass
 
-<h1 id="SSH的两种登录方式"><a href="#SSH的两种登录方式" class="headerlink" title="SSH的两种登录方式"></a>SSH的两种登录方式</h1><h2 id="口令登录"><a href="#口令登录" class="headerlink" title="口令登录"></a>口令登录</h2><p>口令登录十分简单，命令格式为: <strong>ssh remote_username@remote_ip</strong>，如：</p>
-<div class="hljs"><pre><code class="hljs shell">ssh xiaoming@192.168.0.15
-ssh -p 123 xiaoming@192.168.0.15  #在服务器的123号端口登录</code></pre></div>
-<p>输入该命令后紧接着按提示输入密码即可。</p>
-<h2 id="公钥登录"><a href="#公钥登录" class="headerlink" title="公钥登录"></a>公钥登录</h2><ol>
-<li>在本机生成密钥对<br>首先在本机使用命令生成密钥对：<div class="hljs"><pre><code class="hljs shell">ssh-keygen -t rsa   #&#x27;-t&#x27;表示类型选项，代表采用rsa加密算法</code></pre></div>
-输入命令后根据提示一步步的按Enter键即可，其中passphrase为私钥口令，一般为空。完成后即可在命令行提示的路径下生成私钥文件 <strong>id_rsa</strong> 和公钥文件 <strong>id_rsa.pub</strong>。</li>
-<li>将公钥复制到服务器中<br>拥有了公钥和密钥之后，需要将公钥文件（id_rsa.pub）的内容添加到服务器的 “/home/user/.ssh/authorized_key” 文件的尾部。</li>
-<li>使用私钥远程连接<br>最后在本机中使用ssh命令进行连接即可，如：<div class="hljs"><pre><code class="hljs shell">ssh xiaoming@192.168.0.15   #默认使用用户目录下&#x27;~/.ssh/id_rsa&#x27;的私钥进行连接
-ssh -i /path/id_rsa xiaoming@192.168.0.15  #使用路径path下的私钥进行连接</code></pre></div>
+<span class="hljs-comment"># 恢复，清除代理</span>
+<span class="hljs-built_in">set</span> http_proxy=
+<span class="hljs-built_in">set</span> https_proxy=
 
-</li>
-</ol>
-<blockquote>
-<p><strong>Tips</strong>:<br>需要确保服务器 SSH 配置文件（’/etc/ssh/sshd_config’）里”PubkeyAuthentication”项为”yes”。</p>
-</blockquote>
-<h1 id="终端文件传输"><a href="#终端文件传输" class="headerlink" title="终端文件传输"></a>终端文件传输</h1><p>在 SSH 的基础上，终端的文件传输十分方便，只需要在本机使用 <strong>scp</strong> 命令即可：</p>
-<div class="hljs"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 从本地复制一个文件到远程服务器</span>
-scp local_file remote_username@remote_ip:remote_folder
-scp local_file remote_username@remote_ip:remote_file
+<span class="hljs-comment"># 设置不走代理的网站ip，用逗号隔开</span>
+<span class="hljs-built_in">set</span> no_proxy=192.168.*.*,*.<span class="hljs-built_in">local</span>,localhost,127.0.0.1</code></pre></div>
 
-<span class="hljs-meta">#</span><span class="bash"> 从远程服务器拷贝一个文件到本地</span>
-scp remote_username@remote_ip:remote_file local_file
-scp remote_username@remote_ip:remote_file local_folder</code></pre></div>
-<p>在复制整个文件夹时，需要加上参数’-r’:</p>
-<div class="hljs"><pre><code class="hljs shell">scp -r local_folder remote_username@remote_ip:remote_folder
-scp -r local_folder remote_ip:remote_folder</code></pre></div>
+<h3 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h3><p>在Linux和Mac里使用的bash里，只需把相应命令的“<strong>set</strong>”换成“<strong>export</strong>”即可：</p>
+<div class="hljs"><pre><code class="hljs bash"><span class="hljs-comment"># 设置全部代理</span>
+<span class="hljs-built_in">export</span> all_proxy=socks5://127.0.0.1:10808
+<span class="hljs-built_in">export</span> all_proxy=http://127.0.0.1:10809
+
+<span class="hljs-comment"># 设置http和https的代理</span>
+<span class="hljs-built_in">export</span> http_proxy=socks5://127.0.0.1:10808
+<span class="hljs-built_in">export</span> https_proxy=socks5://127.0.0.1:10808
+<span class="hljs-built_in">export</span> http_proxy=http://127.0.0.1:10809
+<span class="hljs-built_in">export</span> https_proxy=http://127.0.0.1:10809
+
+<span class="hljs-comment"># 设置http和https代理的用户名和密码（通常不用）</span>
+<span class="hljs-built_in">export</span> http_proxy_user=user
+<span class="hljs-built_in">export</span> http_proxy_pass=pass
+<span class="hljs-built_in">export</span> https_proxy_user=user
+<span class="hljs-built_in">export</span> https_proxy_pass=pass
+
+<span class="hljs-comment"># 恢复，清除代理</span>
+<span class="hljs-built_in">export</span> http_proxy=
+<span class="hljs-built_in">export</span> https_proxy=
+
+<span class="hljs-comment"># 设置不走代理的网站ip，用逗号隔开</span>
+<span class="hljs-built_in">export</span> no_proxy=192.168.*.*,*.<span class="hljs-built_in">local</span>,localhost,127.0.0.1</code></pre></div>
+
+<h2 id="结果测试"><a href="#结果测试" class="headerlink" title="结果测试"></a>结果测试</h2><p>代理设置完成后，就可以使用命令“<strong>curl <a target="_blank" rel="noopener" href="http://www.google.com/">www.google.com</a></strong>”进行测试，若能成功下载谷歌的网页信息，即代表终端的代理设置成功。</p>
 
             </div>
             <hr>
@@ -294,11 +303,7 @@ scp -r local_folder remote_ip:remote_folder</code></pre></div>
                     
                       <a class="hover-with-bg" href="/tags/terminal/">terminal</a>
                     
-                      <a class="hover-with-bg" href="/tags/ssh/">ssh</a>
-                    
-                      <a class="hover-with-bg" href="/tags/scp/">scp</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">远程连接</a>
+                      <a class="hover-with-bg" href="/tags/proxy/">proxy</a>
                     
                   </div>
                 
@@ -309,18 +314,12 @@ scp -r local_folder remote_ip:remote_folder</code></pre></div>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86.html">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">终端设置代理</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Git%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E5%90%88.html">
-                        <span class="hidden-mobile">Git 常用命令整合</span>
+                      <a href="/%E7%BB%88%E7%AB%AF%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93.html">
+                        <span class="hidden-mobile">终端实现远程连接与文件传输</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

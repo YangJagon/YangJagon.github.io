@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>终端设置代理</title>
+    <link href="/%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86.html"/>
+    <url>/%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="终端设置代理"><a href="#终端设置代理" class="headerlink" title="终端设置代理"></a>终端设置代理</h1><p>当我们通过境内网络在终端使用“<strong>git</strong>”或“<strong>pip</strong>”等软件时，由于他们的服务器都在国外，访问、下载速度非常慢。因此搜索学习了在终端设置代理，加快访问速度，并记录一下。</p><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>首先需要准备一个设置好代理服务器的代理软件，并在软件中查看对应的通信方式及端口。如我使用的是v2ray，从下图中可以看到该客户端包含的两种通信方式及其对应的两个端口分别是：</p><pre><code class="hljs bash">socks5://127.0.0.1:10808http://127.0.0.1:10809</code></pre><p><img src="/images/%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/v2ray.png" srcset="/img/loading.gif" alt="v2ray"></p><h2 id="设置命令"><a href="#设置命令" class="headerlink" title="设置命令"></a>设置命令</h2><p>在不同的终端里，代理设置的命令不尽相同。</p><h3 id="Cmd"><a href="#Cmd" class="headerlink" title="Cmd"></a>Cmd</h3><p>在Windows使用的cmd里，设置命令如下：</p><pre><code class="hljs bash"><span class="hljs-comment"># 设置全部代理</span><span class="hljs-built_in">set</span> all_proxy=socks5://127.0.0.1:10808<span class="hljs-built_in">set</span> all_proxy=http://127.0.0.1:10809<span class="hljs-comment"># 设置http和https的代理</span><span class="hljs-built_in">set</span> http_proxy=socks5://127.0.0.1:10808<span class="hljs-built_in">set</span> https_proxy=socks5://127.0.0.1:10808<span class="hljs-built_in">set</span> http_proxy=http://127.0.0.1:10809<span class="hljs-built_in">set</span> https_proxy=http://127.0.0.1:10809<span class="hljs-comment"># 设置http和https代理的用户名和密码（通常不用）</span><span class="hljs-built_in">set</span> http_proxy_user=user<span class="hljs-built_in">set</span> http_proxy_pass=pass<span class="hljs-built_in">set</span> https_proxy_user=user<span class="hljs-built_in">set</span> https_proxy_pass=pass<span class="hljs-comment"># 恢复，清除代理</span><span class="hljs-built_in">set</span> http_proxy=<span class="hljs-built_in">set</span> https_proxy=<span class="hljs-comment"># 设置不走代理的网站ip，用逗号隔开</span><span class="hljs-built_in">set</span> no_proxy=192.168.*.*,*.<span class="hljs-built_in">local</span>,localhost,127.0.0.1</code></pre><h3 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h3><p>在Linux和Mac里使用的bash里，只需把相应命令的“<strong>set</strong>”换成“<strong>export</strong>”即可：</p><pre><code class="hljs bash"><span class="hljs-comment"># 设置全部代理</span><span class="hljs-built_in">export</span> all_proxy=socks5://127.0.0.1:10808<span class="hljs-built_in">export</span> all_proxy=http://127.0.0.1:10809<span class="hljs-comment"># 设置http和https的代理</span><span class="hljs-built_in">export</span> http_proxy=socks5://127.0.0.1:10808<span class="hljs-built_in">export</span> https_proxy=socks5://127.0.0.1:10808<span class="hljs-built_in">export</span> http_proxy=http://127.0.0.1:10809<span class="hljs-built_in">export</span> https_proxy=http://127.0.0.1:10809<span class="hljs-comment"># 设置http和https代理的用户名和密码（通常不用）</span><span class="hljs-built_in">export</span> http_proxy_user=user<span class="hljs-built_in">export</span> http_proxy_pass=pass<span class="hljs-built_in">export</span> https_proxy_user=user<span class="hljs-built_in">export</span> https_proxy_pass=pass<span class="hljs-comment"># 恢复，清除代理</span><span class="hljs-built_in">export</span> http_proxy=<span class="hljs-built_in">export</span> https_proxy=<span class="hljs-comment"># 设置不走代理的网站ip，用逗号隔开</span><span class="hljs-built_in">export</span> no_proxy=192.168.*.*,*.<span class="hljs-built_in">local</span>,localhost,127.0.0.1</code></pre><h2 id="结果测试"><a href="#结果测试" class="headerlink" title="结果测试"></a>结果测试</h2><p>代理设置完成后，就可以使用命令“<strong>curl <a href="http://www.google.com/">www.google.com</a></strong>”进行测试，若能成功下载谷歌的网页信息，即代表终端的代理设置成功。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Terminal</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>terminal</tag>
+      
+      <tag>proxy</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>终端实现远程连接与文件传输</title>
     <link href="/%E7%BB%88%E7%AB%AF%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93.html"/>
     <url>/%E7%BB%88%E7%AB%AF%E5%AE%9E%E7%8E%B0%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E4%B8%8E%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93.html</url>
