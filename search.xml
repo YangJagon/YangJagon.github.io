@@ -633,33 +633,33 @@ tmp.set(<span class="hljs-string">&quot;hello world&quot;</span>);</code></pre>
     <content><![CDATA[<p>Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，SSH 通过在网络中创建安全隧道来实现 SSH 客户端与服务器之间的安全连接，现实中最常用于远程登录系统。SSH 是一种网络协议，其中最常用的实现是 OpenSSH。</p>
 <h1 id="SSH-服务的安装及开启"><a href="#SSH-服务的安装及开启" class="headerlink" title="SSH 服务的安装及开启"></a>SSH 服务的安装及开启</h1><p>SSH 分为服务端软件和客户端软件，只有在被连接机器使用服务端软件开启 SSH 服务，远程的机器才能使用客户端软件在终端进行连接。若只想在用自己的电脑连接远程服务器，只需下载 SSH 客户端软件即可。</p>
 <h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在 windows 系统中，可以在<strong>设置-&gt;应用-&gt;可选功能-&gt;添加功能</strong>里安装 SSH 的服务端软件和客户端软件：<br><img src="/images/ssh%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/Windows%E8%AE%BE%E7%BD%AE%E5%BC%80%E5%90%AFssh.png" srcset="/img/loading.gif" alt="gitfile"><br>安装之后在以管理员身份运行的终端对服务端 SSH 软件进行控制：</p>
-<pre><code class="hljs shell">net start sshd  #开启ssh服务
-net stop sshd   #关闭ssh服务</code></pre>
+<pre><code class="hljs bash">net start sshd  <span class="hljs-comment">#开启ssh服务</span>
+net stop sshd   <span class="hljs-comment">#关闭ssh服务</span></code></pre>
 
 <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>在 Linux 系统中，可以使用 <strong>dpkg</strong> 命令确认是否已经安装了相应的 SSH 软件，若出现以下两行，则证明已安装好了：</p>
-<pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash"> dpkg -l | grep ssh</span>
-ii  openssh-client  1:8.2p1-4   amd64   secure shell (SSH) client, for secure access to remote machines
-ii  openssh-server  1:8.2p1-4   amd64   secure shell (SSH) server, for secure access from remote machines</code></pre>
+<pre><code class="hljs bash">$ dpkg -l | grep ssh
+ii  openssh-client  1:8.2p1-4   amd64   secure shell (SSH) client, <span class="hljs-keyword">for</span> secure access to remote machines
+ii  openssh-server  1:8.2p1-4   amd64   secure shell (SSH) server, <span class="hljs-keyword">for</span> secure access from remote machines</code></pre>
 
 <p>若系统没有默认安装，则可使用 <strong>apt</strong> 命令进行下载安装：</p>
-<pre><code class="hljs shell">sudo apt-get install openssh-client #安装客户端ssh
-sudo apt-get install openssh-server #安装服务端ssh</code></pre>
+<pre><code class="hljs bash">sudo apt-get install openssh-client <span class="hljs-comment">#安装客户端ssh</span>
+sudo apt-get install openssh-server <span class="hljs-comment">#安装服务端ssh</span></code></pre>
 
 <p>安装之后同样在终端进行 SSH 服务的控制：</p>
-<pre><code class="hljs shell">sudo service ssh start  #开启ssh服务
-sudo service ssh stop   #关闭ssh服务
-sudo service ssh status #查看ssh服务状态</code></pre>
+<pre><code class="hljs bash">sudo service ssh start  <span class="hljs-comment">#开启ssh服务</span>
+sudo service ssh stop   <span class="hljs-comment">#关闭ssh服务</span>
+sudo service ssh status <span class="hljs-comment">#查看ssh服务状态</span></code></pre>
 
 <h1 id="SSH的两种登录方式"><a href="#SSH的两种登录方式" class="headerlink" title="SSH的两种登录方式"></a>SSH的两种登录方式</h1><h2 id="口令登录"><a href="#口令登录" class="headerlink" title="口令登录"></a>口令登录</h2><p>口令登录十分简单，命令格式为: <strong>ssh remote_username@remote_ip</strong>，如：</p>
-<pre><code class="hljs shell">ssh xiaoming@192.168.0.15
-ssh -p 123 xiaoming@192.168.0.15  #在服务器的123号端口登录</code></pre>
+<pre><code class="hljs bash">ssh xiaoming@192.168.0.15
+ssh -p 123 xiaoming@192.168.0.15  <span class="hljs-comment">#在服务器的123号端口登录</span></code></pre>
 <p>输入该命令后紧接着按提示输入密码即可。</p>
 <h2 id="公钥登录"><a href="#公钥登录" class="headerlink" title="公钥登录"></a>公钥登录</h2><ol>
-<li>在本机生成密钥对<br>首先在本机使用命令生成密钥对：<pre><code class="hljs shell">ssh-keygen -t rsa   #&#x27;-t&#x27;表示类型选项，代表采用rsa加密算法</code></pre>
+<li>在本机生成密钥对<br>首先在本机使用命令生成密钥对：<pre><code class="hljs bash">ssh-keygen -t rsa   <span class="hljs-comment">#&#x27;-t&#x27;表示类型选项，代表采用rsa加密算法</span></code></pre>
 输入命令后根据提示一步步的按Enter键即可，其中passphrase为私钥口令，一般为空。完成后即可在命令行提示的路径下生成私钥文件 <strong>id_rsa</strong> 和公钥文件 <strong>id_rsa.pub</strong>。</li>
 <li>将公钥复制到服务器中<br>拥有了公钥和密钥之后，需要将公钥文件（id_rsa.pub）的内容添加到服务器的 “/home/user/.ssh/authorized_key” 文件的尾部。</li>
-<li>使用私钥远程连接<br>最后在本机中使用ssh命令进行连接即可，如：<pre><code class="hljs shell">ssh xiaoming@192.168.0.15   #默认使用用户目录下&#x27;~/.ssh/id_rsa&#x27;的私钥进行连接
-ssh -i /path/id_rsa xiaoming@192.168.0.15  #使用路径path下的私钥进行连接</code></pre>
+<li>使用私钥远程连接<br>最后在本机中使用ssh命令进行连接即可，如：<pre><code class="hljs bash">ssh xiaoming@192.168.0.15   <span class="hljs-comment">#默认使用用户目录下&#x27;~/.ssh/id_rsa&#x27;的私钥进行连接</span>
+ssh -i /path/id_rsa xiaoming@192.168.0.15  <span class="hljs-comment">#使用路径path下的私钥进行连接</span></code></pre>
 
 </li>
 </ol>
@@ -667,16 +667,18 @@ ssh -i /path/id_rsa xiaoming@192.168.0.15  #使用路径path下的私钥进行�
 <p><strong>Tips</strong>:<br>需要确保服务器 SSH 配置文件（’/etc/ssh/sshd_config’）里”PubkeyAuthentication”项为”yes”。</p>
 </blockquote>
 <h1 id="终端文件传输"><a href="#终端文件传输" class="headerlink" title="终端文件传输"></a>终端文件传输</h1><p>在 SSH 的基础上，终端的文件传输十分方便，只需要在本机使用 <strong>scp</strong> 命令即可：</p>
-<pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 从本地复制一个文件到远程服务器</span>
+<pre><code class="hljs bash"><span class="hljs-comment"># 从本地复制一个文件到远程服务器</span>
 scp local_file remote_username@remote_ip:remote_folder
 scp local_file remote_username@remote_ip:remote_file
 
-<span class="hljs-meta">#</span><span class="bash"> 从远程服务器拷贝一个文件到本地</span>
+<span class="hljs-comment"># 从远程服务器拷贝一个文件到本地</span>
 scp remote_username@remote_ip:remote_file local_file
 scp remote_username@remote_ip:remote_file local_folder</code></pre>
 <p>在复制整个文件夹时，需要加上参数’-r’:</p>
-<pre><code class="hljs shell">scp -r local_folder remote_username@remote_ip:remote_folder
-scp -r local_folder remote_ip:remote_folder</code></pre>
+<pre><code class="hljs bash"><span class="hljs-comment"># 把本地文件夹拷贝到服务器上</span>
+scp -r local_folder remote_username@remote_ip:remote_folder
+<span class="hljs-comment"># 把服务器上的文件夹拷贝到本地来</span>
+scp -r remote_username@remote_ip:remote_folder local_folder</code></pre>
 ]]></content>
       <categories>
         <category>Terminal</category>
