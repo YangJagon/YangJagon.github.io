@@ -747,6 +747,10 @@ http://127.0.0.1:10809</code></pre>
 <span class="hljs-built_in">export</span> no_proxy=192.168.*.*,*.<span class="hljs-built_in">local</span>,localhost,127.0.0.1</code></pre>
 
 <h2 id="结果测试"><a href="#结果测试" class="headerlink" title="结果测试"></a>结果测试</h2><p>代理设置完成后，就可以使用命令“<strong>curl <a href="http://www.google.com/">www.google.com</a></strong>”进行测试，若能成功下载谷歌的网页信息，即代表终端的代理设置成功。</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>如果使用“<strong>socks</strong>”方式进行代理，直接使用“<strong>pip install</strong>”命令进行下载时，有时会出现错误”<strong>ERROR: Could not install packages due to an Environment Error: Missing dependencies for SOCKS support.</strong>“，那是因为pip缺少了相关的依赖模块。</p>
+<p><img src="/images/%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/piperror.png" srcset="/img/loading.gif" alt="pip error"></p>
+<p>只需先清除掉代理，然后使用命令“<strong>pip install pysocks</strong>”下载pysocks模块即可解决。</p>
+<p><img src="/images/%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/solve.png" srcset="/img/loading.gif" alt="solve"></p>
 ]]></content>
       <categories>
         <category>Terminal</category>
